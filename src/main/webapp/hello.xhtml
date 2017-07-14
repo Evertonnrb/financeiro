@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+	<title>Pagina de cadastro</title>
+	
+	<script>
+		function alterarValorCampo() {
+			var campo = document.getElementById('meuForm:meuCampo');
+			campo.value = 'Valor Aterado';
+		}
+	</script>
+	
+</h:head> 
+<body> 
+	<h1>Welcome #{hello.nomeCompleto}</h1>
+	<h:form id="meuForm">
+		Nome: <h:inputText value="#{hello.nome}" id="meuCampo"/><br/>
+		Sobrenome: <h:inputText value="#{hello.sobrenome}" /><br/>
+		<h:commandButton action="#{hello.dizerOla()}" value="Ok" onclick="alterarValorCampo();"/>
+		
+		<ol>
+			<ui:repeat var="nomes" value="#{hello.nomeCompleto}">
+				<li>#{nomes}</li>
+			</ui:repeat>
+		</ol>
+		
+		<hr/>
+		<h:commandButton action="add-nomes" value="Página anterior" />
+		
+	</h:form>
+</body> 
+</html>
