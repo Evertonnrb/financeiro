@@ -14,10 +14,17 @@
 		}
 	</script>
 	
+	<style>
+		.campo{
+			background-color: #cacaca;
+			color: white;
+		}
+	</style>
+	
 </h:head> 
 <body> 
 	<h1>Welcome #{hello.nomeCompleto}</h1>
-	<h:form id="meuForm">
+	<h:form id="meuForm" styleClass="campo" style="border-color:blue;border-style:dotted">
 		Nome: <h:inputText value="#{hello.nome}" id="meuCampo"/><br/>
 		Sobrenome: <h:inputText value="#{hello.sobrenome}" /><br/>
 		<h:commandButton action="#{hello.dizerOla()}" value="Ok" onclick="alterarValorCampo();"/>

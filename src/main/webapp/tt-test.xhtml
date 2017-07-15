@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>Pagina test js cores</h:head> 
+<h:body> 
+	
+	Bem vindo <span style="font-weight: bold">Everton</span>
+	
+		<br/>	<br/>
+		
+		<h:panelGrid columns="2">
+			<f:facet name="header">
+				<h:outputLabel value="Dados para o cadastro" />
+			</f:facet>
+			<h:outputText value="Nome" />
+			<h:inputText size="20" />
+			<h:outputText value="Email"/>
+			<h:panelGroup>
+				<h:inputText size="20" />
+				<h:outputLabel  />
+				<h:commandButton value="validar" />
+			</h:panelGroup>
+			<h:outputText value="Senha:" />
+			<h:inputText size="20" />
+		</h:panelGrid>
+	
+	<br/><br/>	<br/>	<br/>	<br/>	<br/>	<br/>
+	<br/>
+	<h:outputLabel value="Time de futebol favorito" />
+	<h:outputLabel />
+	<h:selectOneMenu  id="time">
+		<f:selectItem itemValue="Vasco"/>
+		<f:selectItem itemValue="São paulo"/>
+		<f:selectItem itemValue="Flamento"/>
+		<f:selectItem itemValue="Palmera"/>
+		<f:selectItem itemValue="Cruzeiro"/>
+	</h:selectOneMenu>
+	<br/><br/>
+		
+		<br/>
+			<h:selectOneRadio id="sexo" layout="pageDirection">
+				<f:selectItem itemValue="M" itemLabel="Masculino"/>
+				<f:selectItem itemValue="F" itemLabel="Feminino"/>
+			</h:selectOneRadio>
+		<br/>
+		<br/>
+			<h:selectOneListbox size="5" value="#{listaCidadesBean.cidadeNatal}">
+				<f:selectItems value="#{listaCidadesBean.todasCidades}"/>
+			</h:selectOneListbox>
+		<br/>
+		
+		<br/>
+			<h:selectOneListbox>
+				<f:selectItems value="#{listaCidadesBean.todasCidades}"/>
+			</h:selectOneListbox>
+		<br/>
+		
+		<br/>
+			<h:selectBooleanCheckbox id="aceite" />
+			<h:outputLabel value="Li e concordo com os termos de aceite do contrato ....." />
+		
+		<br/><br/>
+		
+	<h:form>
+		Name: <h:inputText onclick="this.value='';"
+			onchange="this.value= this.value.toUpperCase();"
+			onmouseover="this.style.backgroundColor = 'yellow';"
+				onmouseout="this.style.backgroundColor = 'white';" />
+				<br/><br/><br/>
+	<h:inputTextarea value="" cols="10" rows="10" />
+				<br/><br/><br/>
+	<h:graphicImage value="/imagens/camaro.jpg" width="400" height="330" />
+	
+	</h:form>
+</h:body> 
+</html>

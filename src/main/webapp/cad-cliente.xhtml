@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+	<h:outputStylesheet name="estilos/estilos.css" ></h:outputStylesheet>
+	<h:form>
+		<h:message showDetail="true" showSummary="true" errorStyle="color:red" infoStyle="color:orange"
+		 warnStyle="color:black" fatalStyle="color:gray"/>
+		
+		<h:outputLabel value="Nome:" />
+		<h:inputText value="#{cadastrarBean.nome}" />
+		<h:commandButton action="#{cadastrarBean.realizaCadsatro()}" value="Cadastrar" />
+	</h:form>
+	<br/><br/><br/>
+	
+<!-- 	<h:form> -->
+<!-- 		<h:panelGrid columns="2"> -->
+<!-- 			<h:outputLabel value="Titulo" /> -->
+<!-- 			<h:inputText value="#{livrosManagedBean.novoLivro.autor}" /> -->
+<!-- 			<h:outputLabel value="Autor" /> -->
+<!-- 			<h:inputText value="#{livrosManagedBean.novoLivro.nome}" /> -->
+<!-- 			<h:outputLabel /> -->
+<!-- 			<h:commandButton action="#{livrosManagedBean.adicionarLivro()}" value="Adicionar" /> -->
+<!-- 		</h:panelGrid> -->
+<!-- 	</h:form> -->
+	
+	<h:form>
+		<h:dataTable value="#{livrosManagedBean.addLivros}" var="livro" border="1" cellpadding="2" cellspacing="0">
+		<f:facet name="header">Livros da biblioteca</f:facet>
+		<h:column>
+			<f:facet name="header">Titulo</f:facet>
+			<h:outputText value="#{livro.nome}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">Autor</f:facet>
+			<h:outputText value="#{livro.autor}" />
+		</h:column>
+		</h:dataTable>
+	</h:form>
+</body> 
+</html>

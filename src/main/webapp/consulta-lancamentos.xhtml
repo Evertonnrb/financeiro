@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>Consulta de lançamentos</h:head> 
+<h:body> 
+	<f:metadata>
+		<f:viewAction action="#{consultaLancamentoBean.consultar()}"/>
+	</f:metadata>
+	<h1>Consulta de lancamentos</h1>
+	<h:form id="frm">
+		<h:dataTable value="##{consultaLancamentoBean.lancamentos}" var="lancamento" border="1" cellspacing="0"
+		cellpadding="2">
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Pessoa" />
+					</f:facet>
+					<h:outputText value="#{lancamento.pessoa.nome}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Descrisão" />
+					</f:facet>
+					<f:facet name="header">
+						<h:outputText value="#{lancamento.descrisao}" />
+					</f:facet>
+				</h:column>
+		</h:dataTable>
+	</h:form>
+</h:body> 
+</html>
